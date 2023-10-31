@@ -1,0 +1,82 @@
+
+interface Course {
+    void enrollStudent(Student student);
+    void displayInfo();
+}
+
+abstract class Person {
+    private String name;
+    private int age;
+
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public abstract void displayInfo();
+}
+
+
+class Student extends Person {
+    private int studentId;
+
+    public Student(String name, int age, int studentId) {
+        super(name, age);
+        this.studentId = studentId;
+    }
+
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public void displayInfo() {
+        System.out.println("Student Name: " + getName());
+        System.out.println("Student Age: " + getAge());
+        System.out.println("Student ID: " + getStudentId());
+    }
+}
+   public String toString() {
+    return courseName + ":" + description + ":" + creditHours;
+}
+
+public void display() {
+    System.out.println("Course title      = " + getCoursetitle());
+    System.out.println("Course Name      = " + getCourseName());
+    System.out.println("Description      = " + getDescription());
+    System.out.println("Credit Hours           = " + getCreditHours());
+
+} //end display()
+
+
+
+
+
+public static void main(String args []) {
+
+    Course c1;
+    c1 = new Course();
+
+    c1.setCoursetitle(109);
+    c1.setCourseName("Intro to Python");
+    c1.setDescription("This course intros the Python Prog Lang.");
+    c1.setCreditHours(4);
+
+    c1.display();
+
+
+    //Test out toString() method
+    System.out.println(c1);
+} //end main
+} //end class
+
+
+
+
